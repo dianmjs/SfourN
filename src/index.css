@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.formu {
+  padding: 12px 20px;
+  border: 1px solid #6c757d38;
+  background-color: #d6d2c426;
+  color: #01c5c4;
+  border-radius: 7px;
+}
+
+.nav {
+  background: #01c5c4;
+  width: 100%;
+}
+.item {
+  color: white;
+}
+.search {
+  background-color: #6c757d3d;
+}
+.inputSeach {
+  padding: 8px 41px;
+  justify-content: center;
+}
+.titleSearch {
+  text-align: center;
+  padding: 19px 3px;
+  color: #01c5c4;
+  font-size: 27px;
+}
+.buttonpage {
+  padding: 3px 486px;
+}
+
+.btnorder {
+  text-align: center;
+}
+.btnlist {
+  width: 24px;
+  height: 20px;
+}
+.tablerepo tr td {
+  border: 3px solid #17a2b8ad;
+}
+.img {
+  width: 25px;
+  height: 16px;
+  display: initial;
+}
+.flecha {
+  width: 9px;
+  height: 9px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
