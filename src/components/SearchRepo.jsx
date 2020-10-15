@@ -6,13 +6,14 @@ import { infoReposAccion } from '../Redux/repogitDucks';
 const SearchRepo = () => {
 
 const [user, setUser] = useState('');
+
 const dispatch=useDispatch();
 
 React.useEffect(()=>{
     dispatch(infoReposAccion());
 },[dispatch])
 
-const GiUserError = useSelector((store) => store.userGit.data);
+const GiUserValidate = useSelector((store) => store.userGit.data);
 
 const onChangeHanler=(e)=>{
 setUser(e.target.value)
@@ -20,6 +21,7 @@ setUser(e.target.value)
 };
 const handleSubmit=(e)=>{
     e.preventDefault();
+   
  e.target.reset()
 
 }
@@ -54,7 +56,16 @@ const handleSubmit=(e)=>{
             </button>
           </div>
         </div>
-        <TableRepo/>
+        {
+          GiUserValidate.message==="Not Found" ? (
+           <div class="alert alert-danger col-md-3"  role="alert">
+             Usuario no encontrado!!
+       </div>
+         ):(
+       <TableRepo/>
+           )
+        }
+        
       </div>
         
     )

@@ -13,7 +13,7 @@ const TableRepo = () => {
 const gitRepos = useSelector((store) => store.userGit.data);
 
 const [filter,setFilter]=React.useState([])
-
+const [repo,setRepo]=React.useState([])
 
 const sortList=(id)=>{
   console.log("entra")
@@ -30,20 +30,44 @@ const sortList=(id)=>{
   }
   console.log("prueba aux",filter)
   dispatch(updateList(filter))
-  
   }
    
-    return (
-       
-   <div>      
+
+  const onChangeRepo=(e)=>{
+    console.log("Estamos aqui");
+    setRepo(e.target.value)
+  }
+
+
+    return (    
+   <div >     
+   <div className="col-md-12">
+       <div className="input-group col-md-6 inputrepos"> 
+       <form>
+       <input
+       type="text"
+       className="form-control "
+       placeholder="Encuentre un Repositorio"
+       aria-label=""
+       aria-describedby="basic-addon1"
+       value={repo}
+       onChange={onChangeRepo}
+       />
+       </form> 
+       </div>
+
+   </div>
+
+
+
      <table className="table table-bordered tablerepo">
   <thead>
     <tr>
-      <th scope="col-3">Nombre <button type="button" className="btn btn-success btn-sm btnlist" onClick={()=>sortList("name")} ><img src={flecha} className="flecha"/></button></th>
-      <th scope="col-3">Descripción<button type="button" className="btn btn-success btn-sm ml-2 btnlist" onClick={()=>sortList("description")} ><img src={flecha} className="flecha"/></button></th>
-      <th scope="col-3">Branch<button type="button" className="btn btn-success btn-sm ml-4 btnlist" onClick={()=>sortList("forks_count")} ><img src={flecha} className="flecha"/></button></th>
-      <th scope="col-3">Url git<button type="button" className="btn btn-success btn-sm ml-4 btnlist" onClick={()=>sortList("git_url")} ><img src={flecha} className="flecha"/></button></th>
-      <th scope="col-3">Lenguage<button type="button" className="btn btn-success btn-sm ml-2 btnlist" onClick={()=>sortList("language")} ><img src={flecha} className="flecha"/></button></th>
+      <th scope="col-3"><button type="button" className="btn btn-success btn-sm btnlist" onClick={()=>sortList("name")} >Nombre<img src={flecha} className="flecha"/></button></th>
+      <th scope="col-3"><button type="button" className="btn btn-success btn-sm ml-2 btnlist2" onClick={()=>sortList("description")} >Descripción<img src={flecha} className="flecha"/></button></th>
+      <th scope="col-3"><button type="button" className="btn btn-success btn-sm ml-4 btnlist" onClick={()=>sortList("forks_count")} >Branch<img src={flecha} className="flecha"/></button></th>
+      <th scope="col-3"><button type="button" className="btn btn-success btn-sm ml-4 btnlist" onClick={()=>sortList("git_url")} >Url git<img src={flecha} className="flecha"/></button></th>
+      <th scope="col-3"><button type="button" className="btn btn-success btn-sm ml-2 btnlist4" onClick={()=>sortList("language")} >Lenguage<img src={flecha} className="flecha"/></button></th>
     </tr>
   </thead>
   <tbody>

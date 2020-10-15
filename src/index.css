@@ -47,8 +47,16 @@ code {
   text-align: center;
 }
 .btnlist {
-  width: 24px;
-  height: 20px;
+  width: 85px;
+  height: 37px;
+}
+.btnlist2 {
+  width: 106px;
+  height: 34px;
+}
+.btnlist4 {
+  width: 94px;
+  height: 37px;
 }
 .tablerepo tr td {
   border: 3px solid #17a2b8ad;
@@ -59,9 +67,11 @@ code {
   display: initial;
 }
 .flecha {
-  width: 9px;
+  width: 15px;
   height: 9px;
   justify-content: center;
   align-items: center;
-  display: flex;
+}
+.inputrepos {
+  margin: 24px 434px;
 }
