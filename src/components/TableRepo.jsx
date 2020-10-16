@@ -13,7 +13,7 @@ const TableRepo = () => {
 const gitRepos = useSelector((store) => store.userGit.data);
 
 const [filter,setFilter]=React.useState([])
-const [repo,setRepo]=React.useState([])
+const [repo,setRepo]=React.useState('')
 
 const sortList=(id)=>{
   console.log("entra")
@@ -32,18 +32,20 @@ const sortList=(id)=>{
   dispatch(updateList(filter))
   }
    
-
   const onChangeRepo=(e)=>{
     console.log("Estamos aqui");
     setRepo(e.target.value)
   }
 
+   const filterRepo=(event)=>{
+   event.preventDefault()
+   }
 
     return (    
    <div >     
    <div className="col-md-12">
        <div className="input-group col-md-6 inputrepos"> 
-       <form>
+       <form onSubmit={filterRepo}>
        <input
        type="text"
        className="form-control "
@@ -55,7 +57,6 @@ const sortList=(id)=>{
        />
        </form> 
        </div>
-
    </div>
 
 
@@ -71,8 +72,12 @@ const sortList=(id)=>{
     </tr>
   </thead>
   <tbody>
-    {gitRepos.map((date)=>{
-
+    {
+    gitRepos
+    .filter((nameRepo)=>{
+      return nameRepo.name.indexOf(repo.toLowerCase())>= 0;
+    })
+    .map((date)=>{
       return(
       <tr key={date.id}>
       <td >{date.name}</td>

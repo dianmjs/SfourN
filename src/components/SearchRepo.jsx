@@ -16,12 +16,14 @@ React.useEffect(()=>{
 const GiUserValidate = useSelector((store) => store.userGit.data);
 
 const onChangeHanler=(e)=>{
+  console.log('Funciona el input',e.target.value);
+
 setUser(e.target.value)
 
 };
 const handleSubmit=(e)=>{
     e.preventDefault();
-   
+   dispatch(infoReposAccion(user))
  e.target.reset()
 
 }
@@ -49,7 +51,7 @@ const handleSubmit=(e)=>{
           <div className="ml-2">
             <button
               className="btn btn-primary"
-              type="button"
+              type="submit"
               onClick={() => dispatch(infoReposAccion(user))}
               >
                Buscar

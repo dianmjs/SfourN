@@ -8,8 +8,8 @@ const initialState={
 
 //types
 const INFOREPOS_USUARIO="INFOREPOS_USUARIO"
-
 const UPDATELIST="UPDATELIST"
+const CLEAR_REPOS="CLEAR_REPOS"
 
 //reducer
 export default function userReducer(state = initialState, action) {
